@@ -99,6 +99,9 @@ The project intentionally implements **both vulnerable and secure API endpoints*
 ### User — Download Page
 ![User Download Page](images%20ex/7_user_download.png)
 
+### Register / Create Account
+![Register Page](images%20ex/8_register.png)
+
 ---
 
 ## 🚀 How to Run the Project
