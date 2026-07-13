@@ -76,6 +76,21 @@ The project intentionally implements **both vulnerable and secure API endpoints*
 
 ---
 
+## 🖼️ Updated UI (Cloud Landing Design)
+
+The frontend was redesigned with a modern **glassmorphism** aesthetic — light blue gradient background, frosted glass navbar, animated hero illustration, floating cards with RAF loop physics, and mouse parallax.
+
+### New Home Page — Hero Section
+![New Home Hero](images%20ex/9_new_homepage_hero.png)
+
+### New Home Page — Stats & Features
+![New Home Stats](images%20ex/10_new_homepage_stats.png)
+
+### New Home Page — Why Choose Us Grid
+![New Home Features](images%20ex/11_new_homepage_features.png)
+
+---
+
 ## 📸 Screenshots
 
 ### Home Page
