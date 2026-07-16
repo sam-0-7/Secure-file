@@ -1,0 +1,572 @@
+@{
+    ViewData["Title"] = "CloudPulse";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- ================= NAVBAR ================= -->
+
+<nav class="navbar navbar-expand-lg fixed-top custom-navbar">
+    <div class="container">
+
+        <a class="navbar-brand logo" href="#">
+            Cloud<span>Pulse</span>
+        </a>
+
+        <button class="navbar-toggler"
+                data-bs-toggle="collapse"
+                data-bs-target="#menu">
+
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-end"
+             id="menu">
+
+            <ul class="navbar-nav align-items-center">
+
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">Home</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Server Login</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#">IPFS Login</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Owner Login</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#">New Owner</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#">User Login</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="btn login-btn">
+                        New User
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</nav>
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+    <div class="container">
+
+        <div class="row align-items-center">
+
+            <!-- LEFT -->
+
+            <div class="col-lg-6">
+
+                <div class="hero-badge">
+
+                    <i class="fa-solid fa-shield-halved"></i>
+
+                    Smart • Secure • Simplified
+
+                </div>
+
+                <h1>
+
+                    Helping You With Any Of
+
+                    <span>Your Document Needs!</span>
+
+                </h1>
+
+                <p>
+
+                    CloudPulse is a modern cloud platform for
+                    secure document storage, sharing and
+                    management with blockchain integration.
+
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a href="#" class="btn btn-primary-custom">
+
+                        <i class="fa-solid fa-rocket"></i>
+
+                        Get Started
+
+                    </a>
+
+                    <a href="#" class="btn btn-outline-custom">
+
+                        <i class="fa-solid fa-circle-play"></i>
+
+                        Watch Demo
+
+                    </a>
+
+                </div>
+
+            </div>
+
+            <!-- RIGHT -->
+
+            <div class="col-lg-6 text-center">
+
+                <img src="~/images/hero.png"
+                     class="img-fluid hero-image"/>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= STATS ================= -->
+
+<section class="stats">
+
+    <div class="container">
+
+        <div class="row g-4">
+
+            <div class="col-md-3">
+
+                <div class="stat-card">
+
+                    <i class="fa-solid fa-users"></i>
+
+                    <h2>25K+</h2>
+
+                    <p>Happy Users</p>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-3">
+
+                <div class="stat-card">
+
+                    <i class="fa-solid fa-cloud-arrow-up"></i>
+
+                    <h2>10K+</h2>
+
+                    <p>Files Stored</p>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-3">
+
+                <div class="stat-card">
+
+                    <i class="fa-solid fa-shield-heart"></i>
+
+                    <h2>99.9%</h2>
+
+                    <p>Security</p>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-3">
+
+                <div class="stat-card">
+
+                    <i class="fa-solid fa-headset"></i>
+
+                    <h2>24/7</h2>
+
+                    <p>Support</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+@{
+    ViewData["Title"] = "CloudPulse";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- ================= NAVBAR ================= -->
+
+<nav class="navbar navbar-expand-lg fixed-top custom-navbar">
+    <div class="container">
+
+        <a class="navbar-brand logo" href="#">
+            Cloud<span>Pulse</span>
+        </a>
+
+        <button class="navbar-toggler"
+                data-bs-toggle="collapse"
+                data-bs-target="#menu">
+
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-end"
+             id="menu">
+
+            <ul class="navbar-nav align-items-center">
+
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">Home</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Server Login</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#">IPFS Login</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Owner Login</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#">New Owner</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#">User Login</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="btn login-btn">
+                        New User
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</nav>
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+    <div class="container">
+
+        <div class="row align-items-center">
+
+            <!-- LEFT -->
+
+            <div class="col-lg-6">
+
+                <div class="hero-badge">
+
+                    <i class="fa-solid fa-shield-halved"></i>
+
+                    Smart • Secure • Simplified
+
+                </div>
+
+                <h1>
+
+                    Helping You With Any Of
+
+                    <span>Your Document Needs!</span>
+
+                </h1>
+
+                <p>
+
+                    CloudPulse is a modern cloud platform for
+                    secure document storage, sharing and
+                    management with blockchain integration.
+
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a href="#" class="btn btn-primary-custom">
+
+                        <i class="fa-solid fa-rocket"></i>
+
+                        Get Started
+
+                    </a>
+
+                    <a href="#" class="btn btn-outline-custom">
+
+                        <i class="fa-solid fa-circle-play"></i>
+
+                        Watch Demo
+
+                    </a>
+
+                </div>
+
+            </div>
+
+            <!-- RIGHT -->
+
+            <div class="col-lg-6 text-center">
+
+                <img src="~/images/hero.png"
+                     class="img-fluid hero-image"/>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= STATS ================= -->
+
+<section class="stats">
+
+    <div class="container">
+
+        <div class="row g-4">
+
+            <div class="col-md-3">
+
+                <div class="stat-card">
+
+                    <i class="fa-solid fa-users"></i>
+
+                    <h2>25K+</h2>
+
+                    <p>Happy Users</p>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-3">
+
+                <div class="stat-card">
+
+                    <i class="fa-solid fa-cloud-arrow-up"></i>
+
+                    <h2>10K+</h2>
+
+                    <p>Files Stored</p>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-3">
+
+                <div class="stat-card">
+
+                    <i class="fa-solid fa-shield-heart"></i>
+
+                    <h2>99.9%</h2>
+
+                    <p>Security</p>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-3">
+
+                <div class="stat-card">
+
+                    <i class="fa-solid fa-headset"></i>
+
+                    <h2>24/7</h2>
+
+                    <p>Support</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- ================= WHY CHOOSE US ================= -->
+
+<section class="why-us py-5">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <span class="section-tag">
+                WHY CHOOSE US
+            </span>
+
+            <h2 class="section-title mt-3">
+                Everything You Need For
+                <span>Secure Cloud Storage</span>
+            </h2>
+
+            <p class="section-description">
+
+                Store, manage and share your important documents
+                with enterprise-level security powered by blockchain.
+
+            </p>
+
+        </div>
+
+        <div class="row g-4">
+
+            <!-- CARD 1 -->
+
+            <div class="col-lg-4">
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">
+
+                        <i class="fa-solid fa-cloud-arrow-up"></i>
+
+                    </div>
+
+                    <h4>Cloud Storage</h4>
+
+                    <p>
+
+                        Securely upload and manage documents
+                        from anywhere with unlimited accessibility.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- CARD 2 -->
+
+            <div class="col-lg-4">
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">
+
+                        <i class="fa-solid fa-shield-halved"></i>
+
+                    </div>
+
+                    <h4>Blockchain Security</h4>
+
+                    <p>
+
+                        Every uploaded file is protected using
+                        blockchain-based verification.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- CARD 3 -->
+
+            <div class="col-lg-4">
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">
+
+                        <i class="fa-solid fa-users"></i>
+
+                    </div>
+
+                    <h4>Easy Collaboration</h4>
+
+                    <p>
+
+                        Share documents with authorized users
+                        while maintaining complete control.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- CARD 4 -->
+
+            <div class="col-lg-6">
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">
+
+                        <i class="fa-solid fa-lock"></i>
+
+                    </div>
+
+                    <h4>Privacy Protection</h4>
+
+                    <p>
+
+                        Advanced encryption ensures only
+                        authorized users can access your files.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- CARD 5 -->
+
+            <div class="col-lg-6">
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">
+
+                        <i class="fa-solid fa-headset"></i>
+
+                    </div>
+
+                    <h4>24/7 Support</h4>
+
+                    <p>
+
+                        Our support team is available anytime
+                        to help you with your cloud storage needs.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
