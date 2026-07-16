@@ -1,0 +1,21 @@
+## .NET Build artifacts
+bin/
+obj/
+*.user
+
+## SQLite database (runtime data, not source)
+*.db
+*.db-shm
+*.db-wal
+
+## Published output
+publish/
+
+## OS files
+.DS_Store
+Thumbs.db
+
+## IDE
+.vs/
+*.suo
+*.sln.docstates
