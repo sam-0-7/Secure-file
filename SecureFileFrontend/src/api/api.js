@@ -103,6 +103,11 @@ export async function requestSecureCredential({ originalName, mimeType, sizeByte
   return handleResponse(res);
 }
 
+export async function getSecurityStatus() {
+  const res = await fetch(`${BASE_URL}/files/security-status`);
+  return handleResponse(res);
+}
+
 export async function requestVulnerableCredential() {
   const res = await fetch(`${BASE_URL}/files/vulnerable/request-credential`, {
     method: "POST",

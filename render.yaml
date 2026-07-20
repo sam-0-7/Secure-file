@@ -1,0 +1,33 @@
+services:
+  # C# ASP.NET Core Backend API
+  - type: web
+    name: securefile-api
+    env: docker
+    dockerContext: ./SecureFileAPI
+    dockerfilePath: ./SecureFileAPI/Dockerfile
+    plan: free
+    envVars:
+      - key: ASPNETCORE_ENVIRONMENT
+        value: Production
+      - key: SecurityMode
+        value: Full
+      - key: ConnectionStrings__DefaultConnection
+        value: Data Source=securefileapi.db
+
+  # React Vite Frontend Static Site
+  - type: web
+    name: securefile-frontend
+    env: static
+    buildCommand: cd SecureFileFrontend && npm install && npm run build
+    publishPath: ./SecureFileFrontend/dist
+    plan: free
+    envVars:
+      - key: VITE_API_BASE
+        fromService:
+          type: web
+          name: securefile-api
+          property: host
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html

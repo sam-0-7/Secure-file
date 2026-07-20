@@ -1416,3 +1416,64 @@ a:hover { color: #fff; }
   .cl-stat { padding: 0 2rem; }
 }
 
+/* ================================================================
+   FULL SECURITY MODE CUSTOM STYLING
+   ================================================================ */
+
+.security-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(16, 185, 129, 0.4);
+  color: #34d399;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  box-shadow: 0 0 10px rgba(16, 185, 129, 0.1);
+  animation: pulse-secure 2s infinite ease-in-out;
+  margin-left: 1.5rem;
+}
+
+@keyframes pulse-secure {
+  0% { box-shadow: 0 0 8px rgba(16, 185, 129, 0.1); }
+  50% { box-shadow: 0 0 16px rgba(16, 185, 129, 0.3); border-color: rgba(16, 185, 129, 0.6); }
+  100% { box-shadow: 0 0 8px rgba(16, 185, 129, 0.1); }
+}
+
+.security-mode-banner {
+  background: rgba(16, 185, 129, 0.08);
+  border: 1.5px solid rgba(16, 185, 129, 0.3);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem 1.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  box-shadow: var(--shadow);
+  backdrop-filter: var(--glass-blur);
+  animation: slide-down 0.4s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.security-mode-banner-text h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #34d399;
+  margin-bottom: 0.25rem;
+}
+
+.security-mode-banner-text p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+@keyframes slide-down {
+  from { opacity: 0; transform: translateY(-15px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+

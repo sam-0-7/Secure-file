@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { getMyFiles, requestSecureCredential, requestVulnerableCredential, uploadFile, downloadFile, requestDownloadKey, getMockEmails } from "../api/api";
+import { getMyFiles, requestSecureCredential, requestVulnerableCredential, uploadFile, downloadFile, requestDownloadKey, getMockEmails, getSecurityStatus } from "../api/api";
 import { useAuth } from "../context/AuthContext";
 
 function formatBytes(bytes) {
@@ -50,11 +50,24 @@ export default function Dashboard() {
   // Simulated email inbox state
   const [emails, setEmails] = useState([]);
   const [showInbox, setShowInbox] = useState(false);
+  const [securityMode, setSecurityMode] = useState("Demo");
 
   useEffect(() => {
     fetchFiles();
     fetchInbox();
+    checkSecurityMode();
   }, []);
+
+  async function checkSecurityMode() {
+    try {
+      const data = await getSecurityStatus();
+      if (data?.securityMode === "Full" || data?.SecurityMode === "Full") {
+        setSecurityMode("Full");
+      }
+    } catch (err) {
+      console.error("Failed to fetch security status:", err);
+    }
+  }
 
   async function fetchFiles() {
     setLoadingFiles(true);
@@ -93,6 +106,10 @@ export default function Dashboard() {
   }
 
   async function handleVulnerableCredential() {
+    if (securityMode === "Full") {
+      setCredError("Vulnerable credential generation is disabled in Full Security Mode.");
+      return;
+    }
     setVulnCredential(null);
     try {
       const data = await requestVulnerableCredential();
@@ -202,6 +219,16 @@ export default function Dashboard() {
             Welcome back, <strong style={{ color: "#c8860a" }}>{user?.username}</strong>. Manage your encrypted files below.
           </p>
         </div>
+
+        {securityMode === "Full" && (
+          <div className="security-mode-banner" id="dashboard-security-banner">
+            <div className="security-mode-banner-text">
+              <h3>🛡️ Full Security Mode Active</h3>
+              <p>The system is operating under strict OWASP-mitigated guidelines. Insecure pathways (V1–V4 direct credential retrieval) are locked.</p>
+            </div>
+            <div style={{ fontSize: "1.8rem", userSelect: "none" }}>🔒</div>
+          </div>
+        )}
 
         {/* Stats Row */}
         <div className="row g-3 mb-4">
@@ -356,10 +383,12 @@ export default function Dashboard() {
               <button
                 id="btn-vuln-credential"
                 type="button"
-                className="btn-outline-light-custom"
+                className={`btn-outline-light-custom ${securityMode === "Full" ? "disabled-secure-btn" : ""}`}
                 onClick={handleVulnerableCredential}
+                disabled={securityMode === "Full"}
+                style={securityMode === "Full" ? { cursor: "not-allowed", opacity: 0.5, borderStyle: "dashed" } : {}}
               >
-                ⚠️ Vulnerable Credential (Demo)
+                {securityMode === "Full" ? "🔒 Vulnerable Credential (Disabled)" : "⚠️ Vulnerable Credential (Demo)"}
               </button>
             </div>
           </form>

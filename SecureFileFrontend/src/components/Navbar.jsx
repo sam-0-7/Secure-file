@@ -1,10 +1,23 @@
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
+import { useState, useEffect } from "react";
+import { getSecurityStatus } from "../api/api";
 
 export default function Navbar() {
   const { user, logout, isAuthenticated } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
+  const [isFullSecurity, setIsFullSecurity] = useState(false);
+
+  useEffect(() => {
+    getSecurityStatus()
+      .then((data) => {
+        if (data?.securityMode === "Full" || data?.SecurityMode === "Full") {
+          setIsFullSecurity(true);
+        }
+      })
+      .catch((err) => console.error("Error checking security status:", err));
+  }, []);
 
   function handleLogout() {
     logout();
@@ -22,6 +35,12 @@ export default function Navbar() {
           <h2>Cloud<span>Pulse</span></h2>
         </div>
       </Link>
+
+      {isFullSecurity && (
+        <span className="security-badge" id="nav-security-badge">
+          🛡️ Full Security Mode
+        </span>
+      )}
 
       {/* Nav Links */}
       <nav className="cl-nav-links">

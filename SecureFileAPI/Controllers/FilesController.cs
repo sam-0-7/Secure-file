@@ -32,12 +32,29 @@ public class FilesController : ControllerBase
     }
 
     /// <summary>
+    /// Returns whether the API is running in Full Security Mode or Demo Mode.
+    /// </summary>
+    [HttpGet("security-status")]
+    [AllowAnonymous]
+    public IActionResult GetSecurityStatus()
+    {
+        var securityMode = _config["SecurityMode"] ?? "Demo";
+        return Ok(new { SecurityMode = securityMode });
+    }
+
+    /// <summary>
     /// VULNERABLE: Generates an upload credential without restrictions (V1, V2, V3, V4).
     /// </summary>
     [HttpPost("vulnerable/request-credential")]
     [AllowAnonymous] // V1: Unrestricted Acquisition
     public IActionResult RequestVulnerableCredential()
     {
+        var securityMode = _config["SecurityMode"] ?? "Demo";
+        if (string.Equals(securityMode, "Full", StringComparison.OrdinalIgnoreCase))
+        {
+            return BadRequest(new { message = "Vulnerable endpoints are disabled in Full Security Mode." });
+        }
+
         var credential = new
         {
             UploadUrl = $"{Request.Scheme}://{Request.Host}/api/cloudstorage/upload",
@@ -150,7 +167,7 @@ public class FilesController : ControllerBase
     /// Enforces Admin-only upload capability.
     /// </summary>
     [HttpPost("upload")]
-    [Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Admin,Owner")]
     public async Task<IActionResult> UploadFile(IFormFile file)
     {
         if (file == null || file.Length == 0)
