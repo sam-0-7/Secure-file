@@ -17,16 +17,16 @@ services:
   # React Vite Frontend Static Site
   - type: web
     name: securefile-frontend
-    env: static
+    runtime: static
     buildCommand: cd SecureFileFrontend && npm install && npm run build
-    publishPath: ./SecureFileFrontend/dist
+    staticPublishPath: ./SecureFileFrontend/dist
     plan: free
     envVars:
       - key: VITE_API_BASE
         fromService:
           type: web
           name: securefile-api
-          property: host
+          property: url
       - key: NODE_VERSION
         value: 20
     routes:
